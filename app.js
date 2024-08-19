@@ -28,7 +28,7 @@ app.use(express.static('public'));
 
 // Configuração de sessões
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'seuSegredoAqui',
+  secret: process.env.SESSION_SECRET || 'senhaSeguraAqui',
   resave: false,
   saveUninitialized: false
 }));
