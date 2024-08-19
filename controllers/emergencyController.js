@@ -6,7 +6,7 @@ const Doctor = require('../models/doctor');
 exports.getEmergencies = async (req, res) => {
     try {
         const emergencies = await EmergencyCase.find().populate('patient').populate('doctor');
-        console.log(emergencies);  // Verifique se todos os dados estão sendo populados corretamente
+        console.log(emergencies);  
         res.render('emergencies/list', { emergencies });
     } catch (err) {
         console.error('Erro ao listar casos de emergência:', err);
