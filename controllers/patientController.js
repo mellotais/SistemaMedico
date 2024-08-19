@@ -20,11 +20,11 @@ exports.showAddPatientForm = (req, res) => {
 exports.addPatient = async (req, res) => {
     try {
         const { name, birthDate, email, phoneNumber, address, age } = req.body;
-        // Crie um novo paciente com os dados do formulário
+        
         const newPatient = new Patient({ name, birthDate, email, phoneNumber, address, age });
-        // Salve o paciente no banco de dados
+       
         await newPatient.save();
-        // Redirecione para a lista de pacientes após a adição
+        
         res.redirect('/patients');
     } catch (err) {
         console.error('Erro ao adicionar paciente:', err);
